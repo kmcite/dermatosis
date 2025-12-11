@@ -1,4 +1,6 @@
 import 'package:dermatosis/imageries/imageries.dart';
+import 'package:dermatosis/objectbox.g.dart';
+import 'package:dermatosis/patients/patients_repository.dart';
 
 import '../main.dart';
 

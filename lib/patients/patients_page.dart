@@ -12,11 +12,11 @@ class PatientsPage extends UI {
     return FScaffold(
       header: FHeader(
         title: const Text('dermatoma'),
-        actions: [
+        suffixes: [
           FHeaderAction.back(onPress: navigator.back),
         ],
       ),
-      content: ListView.builder(
+      child: ListView.builder(
         physics: const BouncingScrollPhysics(),
         itemCount: patientsBloc.patients.length,
         itemBuilder: (context, index) => PatientTile(

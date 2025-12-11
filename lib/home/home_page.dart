@@ -19,7 +19,7 @@ class HomePage extends UI {
       header: FHeader(
         title: const Text('home'),
       ),
-      content: Column(
+      child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           FLabel(
@@ -77,7 +77,7 @@ class HomePage extends UI {
                         PatientPage(patient.id),
                       );
                     },
-                    label: '${patient.name}'.text(),
+                    child: '${patient.name}'.text(),
                   );
                 },
               ).toList(),

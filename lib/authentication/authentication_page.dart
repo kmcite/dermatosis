@@ -15,23 +15,23 @@ class AuthenticationPage extends UI {
             FTabs(
               initialIndex: authenticationBloc.tabIndex,
               onPress: authenticationBloc.setTabIndex,
-              tabs: [
+              children: [
                 FTabEntry(
                   label: 'DOCTOR'.text(),
-                  content: FLabel(
+                  child: FLabel(
                     child: Column(
                       children: [
                         FTextField(
                           label: 'name'.text(),
-                          initialValue: authenticationBloc.authentication.name,
+                          initialText: authenticationBloc.authentication.name,
                           onChange: authenticationBloc.onNameChange,
                         ).pad(),
                         FTextField.email(
-                          initialValue: authenticationBloc.authentication.email,
+                          initialText: authenticationBloc.authentication.email,
                           onChange: authenticationBloc.onEmailChange,
                         ).pad(),
                         FTextField.password(
-                          initialValue:
+                          initialText:
                               authenticationBloc.authentication.password,
                           onChange: authenticationBloc.onPasswordChange,
                         ).pad(),
@@ -42,20 +42,19 @@ class AuthenticationPage extends UI {
                 ),
                 FTabEntry(
                   label: 'PATIENT'.text(),
-                  content: Column(
+                  child: Column(
                     children: [
                       FTextField(
                         label: 'name'.text(),
-                        initialValue: authenticationBloc.authentication.name,
+                        initialText: authenticationBloc.authentication.name,
                         onChange: authenticationBloc.onNameChange,
                       ).pad(),
                       FTextField.email(
-                        initialValue: authenticationBloc.authentication.email,
+                        initialText: authenticationBloc.authentication.email,
                         onChange: authenticationBloc.onEmailChange,
                       ).pad(),
                       FTextField.password(
-                        initialValue:
-                            authenticationBloc.authentication.password,
+                        initialText: authenticationBloc.authentication.password,
                         onChange: authenticationBloc.onPasswordChange,
                       ).pad(),
                     ],
@@ -64,7 +63,7 @@ class AuthenticationPage extends UI {
               ],
             ),
             FButton(
-              label: const Text('Login'),
+              child: const Text('Login'),
               onPress: authenticationBloc.invalidCredentials
                   ? null
                   : () {

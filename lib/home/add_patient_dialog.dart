@@ -56,12 +56,12 @@ class AddPatientDialog extends UI {
         children: [
           FTextField(
             label: Text('name'),
-            initialValue: _bloc.name(),
+            initialText: _bloc.name(),
             onChange: _bloc.name,
           ),
           FTextField(
             label: Text('complaints'),
-            initialValue: _bloc.complaints(),
+            initialText: _bloc.complaints(),
             onChange: _bloc.complaints,
             minLines: 6,
             maxLines: 15,
@@ -71,11 +71,11 @@ class AddPatientDialog extends UI {
       actions: [
         FButton(
           onPress: _bloc.cancel,
-          label: 'cancel'.text(),
+          child: 'cancel'.text(),
         ),
         FButton(
           onPress: _bloc.yes,
-          label: 'yes'.text(),
+          child: 'yes'.text(),
         ),
       ],
     );

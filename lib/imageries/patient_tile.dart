@@ -18,7 +18,7 @@ class PatientTile extends UI {
         onPress: () => navigator.to(
           PatientPage(patient.id),
         ),
-        label: Icon(Icons.info),
+        child: Icon(Icons.info),
       ),
     );
   }

@@ -11,7 +11,7 @@ class SettingsPage extends UI {
     return FScaffold(
       header: FHeader(
         title: const Text('settings'),
-        actions: [
+        suffixes: [
           FButton.icon(
             onPress: () => navigator.back(),
             child: Icon(Icons.arrow_back_ios),
@@ -24,7 +24,7 @@ class SettingsPage extends UI {
           )
         ],
       ),
-      content: ListView(
+      child: ListView(
         children: [
           // ShadSelect<ThemeMode>(
           //   placeholder: Text('ThemeMode'),
@@ -42,7 +42,7 @@ class SettingsPage extends UI {
           // ),
           FTextField(
             label: Text('clinic/hospital name'),
-            initialValue: settingsBloc.clinicName,
+            initialText: settingsBloc.clinicName,
             onChange: settingsBloc.setClinicName,
           ),
         ],

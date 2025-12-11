@@ -1,3 +1,7 @@
+import 'dart:typed_data';
+
+import 'package:dermatosis/objectbox.g.dart';
+
 import '../main.dart';
 
 @Entity()

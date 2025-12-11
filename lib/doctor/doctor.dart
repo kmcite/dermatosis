@@ -1,4 +1,6 @@
 import 'package:dermatosis/main.dart';
+import 'package:dermatosis/objectbox.g.dart';
+import 'package:dermatosis/patients/patients_repository.dart';
 
 @Entity()
 class Doctor {

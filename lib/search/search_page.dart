@@ -10,13 +10,11 @@ import '../patients/patient_page.dart';
 final searchRM = SearchBloc();
 
 class SearchBloc {
-  PatientsRepository get _patientsRepository => patientsRepository;
-
   final searchRM = RM.injectTextEditing(text: '');
 
   TextEditingController get controller => searchRM.controller;
   List<Patient> get queriedPatients {
-    return _patientsRepository
+    return patientsRepository
         .query(
           Patient_.name.contains(searchRM.text),
         )
@@ -31,20 +29,20 @@ class SearchPage extends UI {
     return FScaffold(
       header: FHeader(
         title: 'Search'.text(),
-        actions: [
+        suffixes: [
           FHeaderAction.back(
             onPress: navigator.back,
           ),
         ],
       ),
-      content: Column(
+      child: Column(
         children: [
           FTextField(
             controller: searchRM.searchRM.controller,
           ).pad(),
           Expanded(
             child: searchRM.searchRM.text.isEmpty
-                ? 'Empty'.text().center()
+                ? Center(child: 'Empty'.text())
                 : ListView.builder(
                     itemCount: searchRM.queriedPatients.length,
                     itemBuilder: (context, index) {
