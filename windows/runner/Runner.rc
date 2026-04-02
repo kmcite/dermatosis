@@ -93,7 +93,7 @@ BEGIN
             VALUE "FileDescription", "dermatosis" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
             VALUE "InternalName", "dermatosis" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 dev.loner. All rights reserved." "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 dev.loner. All rights reserved." "\0"
             VALUE "OriginalFilename", "dermatosis.exe" "\0"
             VALUE "ProductName", "dermatosis" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"

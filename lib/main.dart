@@ -27,12 +27,7 @@ void main() async {
   );
   final appInfo = await PackageInfo.fromPlatform();
   final path = await getApplicationDocumentsDirectory();
-  store = await openStore(
-    directory: join(
-      path.path,
-      appInfo.appName,
-    ),
-  );
+  store = await openStore(directory: join(path.path, appInfo.appName));
 
   // await RM.storageInitializer(HiveStorage());
   runApp(App());
@@ -50,10 +45,8 @@ class App extends UI {
       navigatorKey: navigator.key,
       debugShowCheckedModeBanner: false,
       themeMode: settingsBloc.themeMode(),
-      builder: (context, child) => FTheme(
-        data: FThemes.yellow.light,
-        child: child!,
-      ),
+      builder: (context, child) =>
+          FTheme(data: FThemes.yellow.light, child: child!),
       home: !authenticationBloc.isAuthenticated
           ? HomePage()
           : AuthenticationPage(),

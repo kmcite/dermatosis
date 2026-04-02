@@ -133,9 +133,9 @@
         {
           "id": "5:3391063805521164409",
           "name": "addressId",
+          "indexId": "1:9044445346708171195",
           "type": 11,
           "flags": 520,
-          "indexId": "1:9044445346708171195",
           "relationTarget": "Address"
         },
         {
@@ -146,9 +146,9 @@
         {
           "id": "7:1897619535856809579",
           "name": "contactId",
+          "indexId": "2:4464186779726439750",
           "type": 11,
           "flags": 520,
-          "indexId": "2:4464186779726439750",
           "relationTarget": "Contact"
         },
         {

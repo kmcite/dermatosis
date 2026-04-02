@@ -1,6 +1,6 @@
 import 'package:dermatosis/main.dart';
-import 'package:dermatosis/objectbox.g.dart';
 import 'package:dermatosis/patients/patients_repository.dart';
+import 'package:objectbox/objectbox.dart';
 
 @Entity()
 class Doctor {
@@ -27,11 +27,9 @@ class DoctorsBloc {
   );
 
   Doctor? get(int? id) {
-    return doctors.where(
-      (doctor) {
-        return doctor.id == id;
-      },
-    ).firstOrNull;
+    return doctors.where((doctor) {
+      return doctor.id == id;
+    }).firstOrNull;
   }
 
   List<Doctor> get doctors => doctorsRM.state;

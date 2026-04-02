@@ -16,9 +16,7 @@ class HomePage extends UI {
   @override
   Widget build(BuildContext context) {
     return FScaffold(
-      header: FHeader(
-        title: const Text('home'),
-      ),
+      header: FHeader(title: const Text('home')),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -26,8 +24,8 @@ class HomePage extends UI {
             axis: Axis.vertical,
             label: settingsBloc.clinicName.text(),
             child: 'emeregncy and trauma center'.text(),
-            description:
-                '${todaysPatientsBloc.number} patients served today'.text(),
+            description: '${todaysPatientsBloc.number} patients served today'
+                .text(),
           ).pad(),
           FLabel(
             axis: Axis.vertical,
@@ -69,21 +67,19 @@ class HomePage extends UI {
             label: 'recent modifications'.text(),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: recentlyModifiedBloc.recentlyModifiedPatients.map(
-                (patient) {
-                  return FButton(
-                    onPress: () {
-                      navigator.to(
-                        PatientPage(patient.id),
-                      );
-                    },
-                    child: '${patient.name}'.text(),
-                  );
-                },
-              ).toList(),
+              children: recentlyModifiedBloc.recentlyModifiedPatients.map((
+                patient,
+              ) {
+                return FButton(
+                  onPress: () {
+                    navigator.to(PatientPage(patient.id));
+                  },
+                  child: '${patient.name}'.text(),
+                );
+              }).toList(),
             ),
-            description:
-                '${recentlyModifiedBloc.number} recently modified.'.text(),
+            description: '${recentlyModifiedBloc.number} recently modified.'
+                .text(),
           ).pad(),
         ],
       ),
@@ -99,9 +95,7 @@ class TodaysPatientsBloc {
     final today = DateTime.now();
     final oneDayBefore = today.subtract(const Duration(days: 1));
     return _patientsRepository
-        .query(
-          Patient_.presentation.betweenDate(today, oneDayBefore),
-        )
+        .query(Patient_.presentation.betweenDate(today, oneDayBefore))
         .build()
         .find()
         .length;
@@ -117,9 +111,7 @@ class RecentlyModifiedBloc {
   PatientsRepository get _patientsRepository => patientsRepository;
   List<Patient> get recentlyModifiedPatients {
     return _patientsRepository
-        .query(
-          Patient_.modifiedOn.lessOrEqualDate(DateTime.now()),
-        )
+        .query(Patient_.modifiedOn.lessOrEqualDate(DateTime.now()))
         .build()
         .find()
         .take(5)

@@ -1,6 +1,6 @@
 import 'dart:typed_data';
 
-import 'package:dermatosis/objectbox.g.dart';
+import 'package:objectbox/objectbox.dart';
 
 import '../main.dart';
 
